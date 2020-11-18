@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
+using Instagrao.Domain.DTO;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Instagrao.Controllers
 {
@@ -12,7 +11,6 @@ namespace Instagrao.Controllers
     public class ValuesController : ControllerBase
     {
         private const string TableName = "commentsTable";
-        private readonly IAmazonDynamoDB _amazonDynamoDb;
         // GET api/values
         [HttpGet]
         public IEnumerable<string> Get()
@@ -22,7 +20,7 @@ namespace Instagrao.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<string>> Get(int id, [FromServices] IAmazonDynamoDB _amazonDynamoDB)
+        public async Task<ActionResult<string>> Get(string id, [FromServices] IAmazonDynamoDB _amazonDynamoDB)
         {
             var request = new GetItemRequest
             {
@@ -30,11 +28,7 @@ namespace Instagrao.Controllers
                 Key = new Dictionary<string, AttributeValue>
                 {
                      {
-                      "id",
-                      new AttributeValue
-                      {
-                        S = id.ToString()
-                      }
+                      "id", new AttributeValue { S = id }
                      }
                 }
             };
@@ -44,8 +38,19 @@ namespace Instagrao.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Post([FromBody] CreateEntry value, [FromServices] IAmazonDynamoDB _amazonDynamoDB)
         {
+            var request = new PutItemRequest
+            {
+                TableName = TableName,
+                Item = new Dictionary<string, AttributeValue>
+                {
+                    { "id", new AttributeValue { S = value.Id }},
+                    { "username", new AttributeValue { S = value.Value }}
+                }
+            };
+
+            await _amazonDynamoDB.PutItemAsync(request);
         }
 
         // PUT api/values/5
