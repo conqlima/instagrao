@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instagrao", "Instagrao\Instagrao.csproj", "{0494EDF4-ED5B-4CC4-A654-0E0D88F815DE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instagrao.Tests", "Instagrao.Tests\Instagrao.Tests.csproj", "{1994272B-F114-4E56-8E13-2AD183A6DE4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0494EDF4-ED5B-4CC4-A654-0E0D88F815DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0494EDF4-ED5B-4CC4-A654-0E0D88F815DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0494EDF4-ED5B-4CC4-A654-0E0D88F815DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0494EDF4-ED5B-4CC4-A654-0E0D88F815DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1994272B-F114-4E56-8E13-2AD183A6DE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1994272B-F114-4E56-8E13-2AD183A6DE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1994272B-F114-4E56-8E13-2AD183A6DE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1994272B-F114-4E56-8E13-2AD183A6DE4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {749A6E63-9331-4FCF-B25A-B5378CF67249}
+	EndGlobalSection
+EndGlobal
