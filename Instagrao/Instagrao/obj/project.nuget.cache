@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k0gojAKwR8t7TgUABV99Tjfm7ELG7CGPlMiSvyTkH44xwG3EXr9rXXeCmQ8vi0r+VTR9X2i03ctZVbsve67Qcg==",
+  "dgSpecHash": "5Egg7PY4FXvAL+GYEAhJR4ixc9qhm/mWLBfUghekkEX2m1d6xMbC/Qg6R8QniDF9oTi1zt7ESiNZuY5XQCVdgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.araujo\\Desktop\\instagrao\\Instagrao\\Instagrao\\Instagrao.csproj",
   "expectedPackageFiles": [
@@ -9,11 +9,12 @@
     "C:\\Users\\robson.araujo\\.nuget\\packages\\amazon.lambda.aspnetcoreserver\\5.1.1\\amazon.lambda.aspnetcoreserver.5.1.1.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\amazon.lambda.core\\1.1.0\\amazon.lambda.core.1.1.0.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\amazon.lambda.logging.aspnetcore\\3.0.0\\amazon.lambda.logging.aspnetcore.3.0.0.nupkg.sha512",
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\amazon.lambda.s3events\\1.2.0\\amazon.lambda.s3events.1.2.0.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.0.1\\amazon.lambda.serialization.systemtextjson.2.0.1.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.core\\3.5.1.37\\awssdk.core.3.5.1.37.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.dynamodbv2\\3.5.3.1\\awssdk.dynamodbv2.3.5.3.1.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.3.100.1\\awssdk.extensions.netcore.setup.3.3.100.1.nupkg.sha512",
-    "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.s3\\3.3.110.62\\awssdk.s3.3.3.110.62.nupkg.sha512",
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.s3\\3.5.4.1\\awssdk.s3.3.5.4.1.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.extensions.configuration\\2.1.0\\microsoft.extensions.configuration.2.1.0.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\2.1.0\\microsoft.extensions.configuration.abstractions.2.1.0.nupkg.sha512",
@@ -24,32 +25,26 @@
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.extensions.options\\2.1.0\\microsoft.extensions.options.2.1.0.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.extensions.primitives\\2.1.0\\microsoft.extensions.primitives.2.1.0.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\runtime.osx.10.10-x64.corecompat.system.drawing\\5.8.64\\runtime.osx.10.10-x64.corecompat.system.drawing.5.8.64.nupkg.sha512",
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\sixlabors.imagesharp\\1.0.2\\sixlabors.imagesharp.1.0.2.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Users\\robson.araujo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.8\\microsoft.netcore.app.host.linux-x64.3.1.8.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: AWSSDK.S3 3.3.110.62 requires AWSSDK.Core (>= 3.3.106.16 && < 3.4.0) but version AWSSDK.Core 3.5.1.37 was resolved.",
+      "message": "Versão detectada do pacote fora da restrição de dependência: AWSSDK.Extensions.NETCore.Setup 3.3.100.1 requer AWSSDK.Core (>= 3.3.100 && < 3.4.0), mas a versão AWSSDK.Core 3.5.1.37 foi resolvida.",
       "libraryId": "AWSSDK.Core",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    },
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: AWSSDK.Extensions.NETCore.Setup 3.3.100.1 requires AWSSDK.Core (>= 3.3.100 && < 3.4.0) but version AWSSDK.Core 3.5.1.37 was resolved.",
-      "libraryId": "AWSSDK.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
+        ".NETCoreApp,Version=v3.1",
+        ".NETCoreApp,Version=v3.1/linux-x64"
       ]
     }
   ]

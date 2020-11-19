@@ -39,7 +39,7 @@
     "AspNetCoreFunction": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "Instagrao::Instagrao.LambdaEntryPoint::FunctionHandlerAsync",
+        "Handler": "Instagrao::Instagrao.Function::FunctionHandlerAsync",
         "Runtime": "dotnetcore3.1",
         "CodeUri": "",
         "MemorySize": 256,

@@ -23,7 +23,7 @@ namespace Instagrao.Tests
         [Fact]
         public async Task TestGet()
         {
-            var lambdaFunction = new LambdaEntryPoint();
+            var lambdaFunction = new Function();
 
             var requestStr = File.ReadAllText("./SampleRequests/ValuesController-Get.json");
             var request = JsonConvert.DeserializeObject<APIGatewayProxyRequest>(requestStr);

@@ -35,3 +35,6 @@ C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Release\netcore
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Release\netcoreapp3.1\linux-x64\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Release\netcoreapp3.1\linux-x64\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\obj\Release\netcoreapp3.1\linux-x64\Instagrao.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Release\netcoreapp3.1\linux-x64\Amazon.Lambda.S3Events.dll
+C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Release\netcoreapp3.1\linux-x64\runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll
+C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Release\netcoreapp3.1\linux-x64\SixLabors.ImageSharp.dll

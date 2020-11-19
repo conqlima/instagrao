@@ -22,7 +22,7 @@
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">C:\Users\robson.araujo\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0</PkgMicrosoft_Extensions_ApiDescription_Server>
     <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\robson.araujo\.nuget\packages\awssdk.core\3.5.1.37</PkgAWSSDK_Core>
-    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\robson.araujo\.nuget\packages\awssdk.s3\3.3.110.62</PkgAWSSDK_S3>
+    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\robson.araujo\.nuget\packages\awssdk.s3\3.5.4.1</PkgAWSSDK_S3>
     <PkgAWSSDK_DynamoDBv2 Condition=" '$(PkgAWSSDK_DynamoDBv2)' == '' ">C:\Users\robson.araujo\.nuget\packages\awssdk.dynamodbv2\3.5.3.1</PkgAWSSDK_DynamoDBv2>
   </PropertyGroup>
 </Project>
