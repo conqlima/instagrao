@@ -3,7 +3,9 @@ using Amazon.DynamoDBv2.Model;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.S3Events;
 using Amazon.S3;
+using Microsoft.Extensions.DependencyInjection;
 using SixLabors.ImageSharp;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,7 +17,7 @@ namespace Instagrao
 {
     public class Function
     {
-        private const string TableName = "ImageMetadata";
+        private const string TableName = "ImageMetadata2";
         private readonly IAmazonS3 _S3Client;
         private readonly IAmazonDynamoDB _amazonDynamoDB;
 
@@ -27,7 +29,10 @@ namespace Instagrao
         public Function()
         {
             _S3Client = new AmazonS3Client();
-            _amazonDynamoDB = new AmazonDynamoDBClient();
+            var serviceColletion = new ServiceCollection();
+            ConfigureServices(serviceColletion);
+            var serviceProvider = serviceColletion.BuildServiceProvider();
+            _amazonDynamoDB = (IAmazonDynamoDB)serviceProvider.GetService(typeof(IAmazonDynamoDB));
         }
 
         /// <summary>
@@ -72,9 +77,26 @@ namespace Instagrao
                         }
                 };
 
-                await _amazonDynamoDB.PutItemAsync(request);
+                try
+                {
+                    await _amazonDynamoDB.PutItemAsync(request);
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+
                 image.Dispose();
             }
+        }
+
+        private static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton<IAmazonDynamoDB>(sp =>
+            {
+                var clientConfig = new AmazonDynamoDBConfig { ServiceURL = "http://localhost:8000" };
+                return new AmazonDynamoDBClient(clientConfig);
+            });
         }
     }
 }

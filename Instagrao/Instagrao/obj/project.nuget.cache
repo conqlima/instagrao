@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5Egg7PY4FXvAL+GYEAhJR4ixc9qhm/mWLBfUghekkEX2m1d6xMbC/Qg6R8QniDF9oTi1zt7ESiNZuY5XQCVdgg==",
+  "dgSpecHash": "MwxaQWaHRdtxLVZ/8lk8yzJ2ejGS/yr2FmutLDPGBRPpFOksmY7MnqSC3Vy9Ii9etj6q3Ji8qHdQg50pYrt9Uw==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.araujo\\Desktop\\instagrao\\Instagrao\\Instagrao\\Instagrao.csproj",
   "expectedPackageFiles": [
@@ -32,19 +32,17 @@
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Users\\robson.araujo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
-    "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.8\\microsoft.netcore.app.host.linux-x64.3.1.8.nupkg.sha512"
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Versão detectada do pacote fora da restrição de dependência: AWSSDK.Extensions.NETCore.Setup 3.3.100.1 requer AWSSDK.Core (>= 3.3.100 && < 3.4.0), mas a versão AWSSDK.Core 3.5.1.37 foi resolvida.",
+      "message": "Detected package version outside of dependency constraint: AWSSDK.Extensions.NETCore.Setup 3.3.100.1 requires AWSSDK.Core (>= 3.3.100 && < 3.4.0) but version AWSSDK.Core 3.5.1.37 was resolved.",
       "libraryId": "AWSSDK.Core",
       "targetGraphs": [
-        ".NETCoreApp,Version=v3.1",
-        ".NETCoreApp,Version=v3.1/linux-x64"
+        ".NETCoreApp,Version=v3.1"
       ]
     }
   ]
