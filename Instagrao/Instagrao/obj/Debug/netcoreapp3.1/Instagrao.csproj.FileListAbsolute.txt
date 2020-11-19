@@ -48,6 +48,7 @@ C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreap
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libpng16.16.dylib
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libtiff.5.dylib
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\SixLabors.ImageSharp.dll
+C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\obj\Debug\netcoreapp3.1\Instagrao.csproj.CoreCompileInputs.cache
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\obj\Debug\netcoreapp3.1\Instagrao.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\obj\Debug\netcoreapp3.1\Instagrao.MvcApplicationPartsAssemblyInfo.cache

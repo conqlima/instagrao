@@ -50,7 +50,7 @@ namespace Instagrao
                 services.AddAWSService<IAmazonDynamoDB>();
             }
 
-            services.AddSingleton(Configuration.GetSection("Project").Get<AppSettings>());
+            services.AddSingleton(Configuration.GetSection("DynamoDb").Get<AppSettings>());
             services.AddServices();
             services.AddRepositories();
         }

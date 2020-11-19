@@ -19,29 +19,5 @@ namespace Instagrao.Controllers
         {
             return await getService.Get(s3ObjectKey);
         }
-
-        /// <summary>
-        /// Criar associação de questões similares
-        /// </summary>
-        /// <param name="facade"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        [HttpGet("download/{s3ObjectKey}")]
-        public string GetImage(string s3ObjectKey)
-        {
-            return "hello";
-        }
-
-        /// <summary>
-        /// Criar associação de questões similares
-        /// </summary>
-        /// <param name="facade"></param>
-        /// <param name="request"></param>
-        /// <returns></returns>
-        [HttpGet("info")]
-        public string InfoImages()
-        {
-            return "hello";
-        }
     }
 }

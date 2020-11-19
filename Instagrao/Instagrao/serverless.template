@@ -36,10 +36,10 @@
     }
   },
   "Resources": {
-    "AspNetCoreFunction": {
+    "ExtractMetadata": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "Instagrao::Instagrao.Function::FunctionHandlerAsync",
+        "Handler": "Instagrao::Instagrao.Function::ExtractMetadataAsync",
         "Runtime": "dotnetcore3.1",
         "CodeUri": "",
         "MemorySize": 256,
@@ -64,18 +64,67 @@
           }
         },
         "Events": {
-          "ProxyResource": {
-            "Type": "Api",
-            "Properties": {
-              "Path": "/{proxy+}",
-              "Method": "ANY"
-            }
-          },
           "RootResource": {
             "Type": "Api",
             "Properties": {
               "Path": "/",
               "Method": "ANY"
+            }
+          }
+        }
+      }
+    },
+    "GetMetadata": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "Instagrao::Instagrao.Function::GetMetadataAsync",
+        "Runtime": "dotnetcore3.1",
+        "CodeUri": "",
+        "Description": "Function to get metdata from images uploaded to S3 Bucket",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [
+          "AWSLambdaFullAccess"
+        ],
+        "Environment": {
+          "Variables": {
+          }
+        },
+        "Events": {
+          "PutResource": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/{s3ObjectKey}",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "GetImage": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "Instagrao::Instagrao.Function::GetImageAsync",
+        "Runtime": "dotnetcore3.1",
+        "CodeUri": "",
+        "Description": "Function to download images from S3 Object",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [
+          "AWSLambdaFullAccess"
+        ],
+        "Environment": {
+          "Variables": {
+          }
+        },
+        "Events": {
+          "PutResource": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/download/{s3ObjectKey}",
+              "Method": "GET"
             }
           }
         }

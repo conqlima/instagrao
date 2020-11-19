@@ -19,7 +19,7 @@ namespace Instagrao.Repositories
 
         public async Task<GetItemResponse> Get(GetItemRequest request)
         {
-            request.TableName = _appSettings.DbName;
+            request.TableName = _appSettings.TableName;
             return await _amazonDynamoDB.GetItemAsync(request);
         }
     }

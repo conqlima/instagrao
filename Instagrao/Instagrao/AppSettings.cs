@@ -2,6 +2,7 @@
 {
     public class AppSettings
     {
-        public string DbName { get; set; }
+        public string TableName { get; set; }
+        public bool LocalMode { get; set; }
     }
 }

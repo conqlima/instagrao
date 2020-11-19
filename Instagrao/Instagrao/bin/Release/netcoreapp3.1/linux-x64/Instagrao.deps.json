@@ -30,6 +30,7 @@
           "AWSSDK.S3": "3.5.4.1",
           "Amazon.Lambda.AspNetCoreServer": "5.1.1",
           "Amazon.Lambda.S3Events": "1.2.0",
+          "Newtonsoft.Json": "12.0.3",
           "SixLabors.ImageSharp": "1.0.2",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Swashbuckle.AspNetCore.Swagger": "5.6.3",
@@ -1860,6 +1861,11 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
         "compile": {
           "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {}
@@ -1911,6 +1917,7 @@
           "AWSSDK.S3": "3.5.4.1",
           "Amazon.Lambda.AspNetCoreServer": "5.1.1",
           "Amazon.Lambda.S3Events": "1.2.0",
+          "Newtonsoft.Json": "12.0.3",
           "SixLabors.ImageSharp": "1.0.2",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Swashbuckle.AspNetCore.Swagger": "5.6.3",
@@ -2367,6 +2374,14 @@
           }
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
       "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
         "runtime": {
           "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {
@@ -2577,6 +2592,13 @@
       "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
       "type": "package",
