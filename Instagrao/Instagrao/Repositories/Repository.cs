@@ -22,5 +22,17 @@ namespace Instagrao.Repositories
             request.TableName = _appSettings.TableName;
             return await _amazonDynamoDB.GetItemAsync(request);
         }
+
+        public async Task Put(PutItemRequest request)
+        {
+            request.TableName = _appSettings.TableName;
+            await _amazonDynamoDB.PutItemAsync(request);
+        } 
+
+        public async Task<ScanResponse> Scan(ScanRequest request)
+        {
+            request.TableName = _appSettings.TableName;
+            return await _amazonDynamoDB.ScanAsync(request);
+        }
     }
 }

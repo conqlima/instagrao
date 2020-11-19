@@ -5,6 +5,8 @@ using Amazon.Lambda.Core;
 using Amazon.Lambda.S3Events;
 using Amazon.S3;
 using Amazon.S3.Model;
+using Instagrao.Domain.DTO;
+using Instagrao.Domain.Interfaces;
 using Instagrao.Repositories;
 using Instagrao.Services;
 using Microsoft.Extensions.Configuration;
@@ -25,9 +27,8 @@ namespace Instagrao
     public class Function
     {
         private readonly IAmazonS3 _S3Client;
-        private readonly IAmazonDynamoDB _amazonDynamoDB;
-        private readonly AppSettings appSettings;
         private readonly IGetService getService;
+        private readonly IRepository repository;
 
         private const string ID_QUERY_STRING_NAME = "s3ObjectKey";
 
@@ -48,20 +49,10 @@ namespace Instagrao
             .Build();
 
             ConfigureServices(serviceColletion, configuration);
+
             var serviceProvider = serviceColletion.BuildServiceProvider();
-
-            appSettings = (AppSettings)serviceProvider.GetService(typeof(AppSettings));
             getService = (IGetService)serviceProvider.GetService(typeof(IGetService));
-
-
-            if (appSettings.LocalMode)
-            {
-                _amazonDynamoDB = (IAmazonDynamoDB)serviceProvider.GetService(typeof(IAmazonDynamoDB));
-            }
-            else
-            {
-                _amazonDynamoDB = new AmazonDynamoDBClient();
-            }
+            repository = (IRepository)serviceProvider.GetService(typeof(IRepository));
 
         }
 
@@ -69,12 +60,9 @@ namespace Instagrao
         /// Constructs an instance with a preconfigured S3 client. This can be used for testing the outside of the Lambda environment.
         /// </summary>
         /// <param name="s3Client"></param>
-        public Function(
-            IAmazonS3 s3Client,
-            IAmazonDynamoDB amazonDynamoDB)
+        public Function(IAmazonS3 s3Client)
         {
             _S3Client = s3Client;
-            _amazonDynamoDB = amazonDynamoDB;
         }
 
         /// <summary>
@@ -101,7 +89,6 @@ namespace Instagrao
 
                         var request = new PutItemRequest
                         {
-                            TableName = appSettings.TableName,
                             Item = new Dictionary<string, AttributeValue>
                             {
                                 { "ImageMetadataId", new AttributeValue { S = record.S3.Object.Key }},
@@ -110,7 +97,7 @@ namespace Instagrao
                                 { "Height", new AttributeValue { N = height.ToString() }}
                             }
                         };
-                        await _amazonDynamoDB.PutItemAsync(request);
+                        await repository.Put(request);
                     }
                     catch (Exception e)
                     {
@@ -203,6 +190,23 @@ namespace Instagrao
             }
         }
 
+        public async Task<APIGatewayProxyResponse> InfoImageAsync(APIGatewayProxyRequest request, ILambdaContext context)
+        {
+            var info = new InfoImage
+            {
+                BiggestImage = await getService.GetBiggestImage(),
+                SmallerImage = await getService.GetSmallestImage(),
+                ImageExtensions = await getService.GetImagesExtensions()
+            };
+            var response = new APIGatewayProxyResponse
+            {
+                StatusCode = (int)HttpStatusCode.OK,
+                Body = JsonConvert.SerializeObject(info),
+                Headers = new Dictionary<string, string> { { "Content-Type", "application/json" } }
+            };
+
+            return response;
+        }
         private static byte[] ReadStream(Stream responseStream)
         {
             byte[] buffer = new byte[16 * 1024];

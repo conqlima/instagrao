@@ -130,6 +130,34 @@
         }
       }
     },
+    "InfoImages": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "Instagrao::Instagrao.Function::InfoImageAsync",
+        "Runtime": "dotnetcore3.1",
+        "CodeUri": "",
+        "Description": "Function to get info about all images from S3 Object",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [
+          "AWSLambdaFullAccess"
+        ],
+        "Environment": {
+          "Variables": {
+          }
+        },
+        "Events": {
+          "PutResource": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/download/{s3ObjectKey}",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
     "Bucket": {
       "Type": "AWS::S3::Bucket",
       "Condition": "CreateS3Bucket",
