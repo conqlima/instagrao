@@ -14,5 +14,5 @@
     "template"      : "serverless.template",
     "template-parameters" : "\"BucketName\"=\"\"",
     "s3-bucket"           : "conqlimabucket2",
-    "stack-name"          : "InstagraoApi"
+    "stack-name"          : "myStack"
 }

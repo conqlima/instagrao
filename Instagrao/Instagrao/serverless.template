@@ -59,10 +59,6 @@
         "Policies": [
           "AWSLambdaFullAccess"
         ],
-        "Environment": {
-          "Variables": {
-          }
-        },
         "Events": {
           "PutResource": {
             "Type": "Api",
@@ -87,10 +83,6 @@
         "Policies": [
           "AWSLambdaFullAccess"
         ],
-        "Environment": {
-          "Variables": {
-          }
-        },
         "Events": {
           "PutResource": {
             "Type": "Api",
@@ -107,7 +99,6 @@
       "Properties": {
         "Handler": "Instagrao::Instagrao.Function::InfoImageAsync",
         "Runtime": "dotnetcore3.1",
-        "CodeUri": "",
         "Description": "Function to get info about all images from S3 Object",
         "MemorySize": 256,
         "Timeout": 30,
@@ -115,10 +106,6 @@
         "Policies": [
           "AWSLambdaFullAccess"
         ],
-        "Environment": {
-          "Variables": {
-          }
-        },
         "Events": {
           "PutResource": {
             "Type": "Api",
@@ -135,6 +122,28 @@
       "Properties": {
         "BucketName": "conqlimabucket"
       }
+    },
+    "DynamoDBTable" : {
+        "Type" : "AWS::DynamoDB::Table",
+        "Properties" : {
+            "AttributeDefinitions" : [
+                    {
+                        "AttributeName" : "ImageMetadataId",
+                        "AttributeType" : "S"
+                    }
+            ],
+            "KeySchema" : [
+                     {
+                        "AttributeName" : "ImageMetadataId",
+                        "KeyType" : "HASH"
+                     }
+            ],
+             "ProvisionedThroughput" :{
+                "ReadCapacityUnits" : "5",
+                "WriteCapacityUnits" : "5"
+             },
+             "TableName" : "ImageMetadata"
+        }
     },
     "InvokePermission": {
         "Type": "AWS::Lambda::Permission",

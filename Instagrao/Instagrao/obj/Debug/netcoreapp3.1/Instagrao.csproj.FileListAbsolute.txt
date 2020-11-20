@@ -1,4 +1,3 @@
-C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\aws-lambda-tools-defaults.json
 C:\Users\robson.araujo\Desktop\instagrao\Instagrao\Instagrao\bin\Debug\netcoreapp3.1\Properties\launchSettings.json

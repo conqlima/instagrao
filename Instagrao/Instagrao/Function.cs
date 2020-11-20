@@ -167,7 +167,7 @@ namespace Instagrao
             context.Logger.LogLine($"Getting object {s3ObjectKey}");
             try
             {
-                using GetObjectResponse objectResponse = await _S3Client.GetObjectAsync("conqlimabucket2", s3ObjectKey);
+                using GetObjectResponse objectResponse = await _S3Client.GetObjectAsync("conqlimabucket", s3ObjectKey);
                 context.Logger.LogLine($"Found object: {s3ObjectKey != null}");
 
                 var response = new APIGatewayProxyResponse
@@ -175,7 +175,7 @@ namespace Instagrao
                     IsBase64Encoded = true,
                     StatusCode = (int)HttpStatusCode.OK,
                     Body = Convert.ToBase64String(ReadStream(objectResponse.ResponseStream)),
-                    Headers = new Dictionary<string, string> { { "Content-Type", "image/*" } }
+                    Headers = new Dictionary<string, string> { { "Content-Type", "*/*" } }
                 };
 
                 return response;
@@ -209,14 +209,17 @@ namespace Instagrao
         }
         private static byte[] ReadStream(Stream responseStream)
         {
-            byte[] buffer = new byte[16 * 1024];
             using MemoryStream ms = new MemoryStream();
-            int read;
-            while ((read = responseStream.Read(buffer, 0, buffer.Length)) > 0)
-            {
-                ms.Write(buffer, 0, read);
-            }
+            responseStream.CopyTo(ms);
             return ms.ToArray();
+            //byte[] buffer = new byte[16 * 1024];
+            //using MemoryStream ms = new MemoryStream();
+            //int read;
+            //while ((read = responseStream.Read(buffer, 0, buffer.Length)) > 0)
+            //{
+            //    ms.Write(buffer, 0, read);
+            //}
+            //return ms.ToArray();
         }
 
         private string GetRequestParams(APIGatewayProxyRequest request)
