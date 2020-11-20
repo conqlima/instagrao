@@ -67,7 +67,7 @@ namespace Instagrao
         }
 
         /// <summary>
-        /// A Lambda function that extracts metadata from every image uploaded to S3 Bucket
+        /// A Lambda function that extracts metadata from every image uploaded to S3 Bucket.
         /// </summary>
         /// <param name="evnt"></param>
         /// <param name="context"></param>
@@ -111,7 +111,8 @@ namespace Instagrao
         }
 
         /// <summary>
-        /// A Lambda function that returns images metadata from S3 Bucket by s3ObjectKey
+        /// A Lambda function that returns images metadata from S3 Bucket by s3ObjectKey.
+        /// path for http request: /{s3ObjectKey}
         /// </summary>
         /// <param name="request"></param>
         /// <param name="context"></param>
@@ -153,6 +154,13 @@ namespace Instagrao
             }
         }
 
+        /// <summary>
+        /// A Lambda function that downloads the image from S3 Bucket by s3ObjectKey.
+        /// path for http request: download/{s3ObjectKey}
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task<APIGatewayProxyResponse> GetImageAsync(APIGatewayProxyRequest request, ILambdaContext context)
         {
             string s3ObjectKey = GetRequestParams(request);
@@ -192,6 +200,14 @@ namespace Instagrao
             }
         }
 
+        /// <summary>
+        /// A Lambda function that gets the biggest, smallest and the images extensions info about
+        /// all the S3 Bucket imges.
+        /// path for http request: /
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task<APIGatewayProxyResponse> InfoImageAsync(APIGatewayProxyRequest request, ILambdaContext context)
         {
             var info = new InfoImage
@@ -209,6 +225,7 @@ namespace Instagrao
 
             return response;
         }
+        
         private static byte[] ReadStream(Stream responseStream)
         {
             using MemoryStream ms = new MemoryStream();
@@ -225,6 +242,7 @@ namespace Instagrao
                 s3ObjectKey = request.QueryStringParameters[ID_QUERY_STRING_NAME];
             return HttpUtility.UrlDecode(s3ObjectKey);
         }
+
         private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             var dynamoDbConfig = configuration.GetSection("DynamoDb");
