@@ -5,7 +5,7 @@ namespace Instagrao.Domain.DTO
     public class InfoImage
     {
         public ImageMetadata BiggestImage { get; set; }
-        public ImageMetadata SmallerImage { get; set; }
+        public ImageMetadata SmallestImage { get; set; }
         public List<ImageExtensions> ImageExtensions { get; set; }
     }
 

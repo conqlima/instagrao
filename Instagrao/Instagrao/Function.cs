@@ -213,7 +213,7 @@ namespace Instagrao
             var info = new InfoImage
             {
                 BiggestImage = await getService.GetBiggestImage(),
-                SmallerImage = await getService.GetSmallestImage(),
+                SmallestImage = await getService.GetSmallestImage(),
                 ImageExtensions = await getService.GetImagesExtensions()
             };
             var response = new APIGatewayProxyResponse
