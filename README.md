@@ -1,5 +1,5 @@
 # Instagrao
-Solução apresentado para o desafio proposto pela Solvimm.
+Solução apresentado para o desafio proposto pela Solvimm. A publicação na AWS foi feita uilizando o AWS Toolkit for Visual Studio 2019. 
 
 * **ExtractMetadata**: é chamada quando um novo arquivo é carregado no S3 e extrai os metadados da imagem tamanho em bytes, largura e altura e armazena na tabela ImageMetadata no DynamoDB.
    * `Entrada`: Evento de um novo arquivo no S3 Bucket chamado 'conqlimabucket'
