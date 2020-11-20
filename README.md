@@ -1,7 +1,7 @@
 # Instagrao
 Solução apresentado para o desafio proposto pela Solvimm.
 
-* Função ExtractMetadata, que é é chamada quando um novo arquivo é carregado no S3. Ela
+* *ExtractMetadata*, que é é chamada quando um novo arquivo é carregado no S3. Ela
 deverá extrair os metadados da imagem (dimensões, tamanho do arquivo) e armazenar no
 DynamoDB.
 * Função GetMetadata, que recebe a requisição de um endpoint criado pelo AWS API Gateway.
