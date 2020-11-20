@@ -24,9 +24,17 @@
     ".NETCoreApp,Version=v3.1": {
       "Instagrao/1.0.0": {
         "dependencies": {
-          "AWSSDK.Extensions.NETCore.Setup": "3.3.100.1",
-          "AWSSDK.S3": "3.3.110.62",
+          "AWSSDK.Core": "3.5.1.37",
+          "AWSSDK.DynamoDBv2": "3.5.3.1",
+          "AWSSDK.Extensions.NETCore.Setup": "3.3.101",
+          "AWSSDK.S3": "3.5.4.1",
           "Amazon.Lambda.AspNetCoreServer": "5.1.1",
+          "Amazon.Lambda.S3Events": "1.2.0",
+          "Newtonsoft.Json": "12.0.3",
+          "SixLabors.ImageSharp": "1.0.2",
+          "Swashbuckle.AspNetCore": "5.6.3",
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3",
+          "runtime.osx.10.10-x64.CoreCompat.System.Drawing": "5.8.64",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1762,6 +1770,14 @@
           "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll": {}
         }
       },
+      "Amazon.Lambda.S3Events/1.2.0": {
+        "dependencies": {
+          "AWSSDK.S3": "3.5.4.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Amazon.Lambda.S3Events.dll": {}
+        }
+      },
       "Amazon.Lambda.Serialization.SystemTextJson/2.0.1": {
         "dependencies": {
           "Amazon.Lambda.Core": "1.1.0"
@@ -1770,14 +1786,22 @@
           "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
         }
       },
-      "AWSSDK.Core/3.3.106.16": {
+      "AWSSDK.Core/3.5.1.37": {
         "compile": {
-          "lib/netstandard2.0/AWSSDK.Core.dll": {}
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
         }
       },
-      "AWSSDK.Extensions.NETCore.Setup/3.3.100.1": {
+      "AWSSDK.DynamoDBv2/3.5.3.1": {
         "dependencies": {
-          "AWSSDK.Core": "3.3.106.16",
+          "AWSSDK.Core": "3.5.1.37"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {}
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.3.101": {
+        "dependencies": {
+          "AWSSDK.Core": "3.5.1.37",
           "Microsoft.Extensions.Configuration.Abstractions": "2.1.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
           "Microsoft.Extensions.Logging.Abstractions": "2.1.0"
@@ -1786,14 +1810,15 @@
           "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {}
         }
       },
-      "AWSSDK.S3/3.3.110.62": {
+      "AWSSDK.S3/3.5.4.1": {
         "dependencies": {
-          "AWSSDK.Core": "3.3.106.16"
+          "AWSSDK.Core": "3.5.1.37"
         },
         "compile": {
-          "lib/netstandard2.0/AWSSDK.S3.dll": {}
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {}
         }
       },
+      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
       "Microsoft.Extensions.Configuration/2.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "2.1.0"
@@ -1831,15 +1856,72 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.0"
         }
       },
+      "Microsoft.OpenApi/1.2.3": {
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
+        "compile": {
+          "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {}
+        }
+      },
+      "SixLabors.ImageSharp/1.0.2": {
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore/5.6.3": {
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3",
+          "Swashbuckle.AspNetCore.SwaggerGen": "5.6.3",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.6.3"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/5.6.3": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.2.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/5.6.3": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.6.3": {
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        }
+      },
       "System.Memory/4.5.0": {},
       "System.Runtime.CompilerServices.Unsafe/4.5.0": {}
     },
     ".NETCoreApp,Version=v3.1/linux-x64": {
       "Instagrao/1.0.0": {
         "dependencies": {
-          "AWSSDK.Extensions.NETCore.Setup": "3.3.100.1",
-          "AWSSDK.S3": "3.3.110.62",
+          "AWSSDK.Core": "3.5.1.37",
+          "AWSSDK.DynamoDBv2": "3.5.3.1",
+          "AWSSDK.Extensions.NETCore.Setup": "3.3.101",
+          "AWSSDK.S3": "3.5.4.1",
           "Amazon.Lambda.AspNetCoreServer": "5.1.1",
+          "Amazon.Lambda.S3Events": "1.2.0",
+          "Newtonsoft.Json": "12.0.3",
+          "SixLabors.ImageSharp": "1.0.2",
+          "Swashbuckle.AspNetCore": "5.6.3",
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3",
+          "runtime.osx.10.10-x64.CoreCompat.System.Drawing": "5.8.64",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -2180,6 +2262,17 @@
           }
         }
       },
+      "Amazon.Lambda.S3Events/1.2.0": {
+        "dependencies": {
+          "AWSSDK.S3": "3.5.4.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.S3Events.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Amazon.Lambda.Serialization.SystemTextJson/2.0.1": {
         "dependencies": {
           "Amazon.Lambda.Core": "1.1.0"
@@ -2191,17 +2284,28 @@
           }
         }
       },
-      "AWSSDK.Core/3.3.106.16": {
+      "AWSSDK.Core/3.5.1.37": {
         "runtime": {
-          "lib/netstandard2.0/AWSSDK.Core.dll": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.106.16"
+            "fileVersion": "3.5.1.37"
           }
         }
       },
-      "AWSSDK.Extensions.NETCore.Setup/3.3.100.1": {
+      "AWSSDK.DynamoDBv2/3.5.3.1": {
         "dependencies": {
-          "AWSSDK.Core": "3.3.106.16",
+          "AWSSDK.Core": "3.5.1.37"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.5.3.1"
+          }
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.3.101": {
+        "dependencies": {
+          "AWSSDK.Core": "3.5.1.37",
           "Microsoft.Extensions.Configuration.Abstractions": "2.1.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
           "Microsoft.Extensions.Logging.Abstractions": "2.1.0"
@@ -2213,17 +2317,18 @@
           }
         }
       },
-      "AWSSDK.S3/3.3.110.62": {
+      "AWSSDK.S3/3.5.4.1": {
         "dependencies": {
-          "AWSSDK.Core": "3.3.106.16"
+          "AWSSDK.Core": "3.5.1.37"
         },
         "runtime": {
-          "lib/netstandard2.0/AWSSDK.S3.dll": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.110.62"
+            "fileVersion": "3.5.4.1"
           }
         }
       },
+      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
       "Microsoft.Extensions.Configuration/2.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "2.1.0"
@@ -2259,6 +2364,76 @@
         "dependencies": {
           "System.Memory": "4.5.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        }
+      },
+      "Microsoft.OpenApi/1.2.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "1.2.3.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
+        "runtime": {
+          "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {
+            "assemblyVersion": "5.8.64.0",
+            "fileVersion": "5.8.64.0"
+          }
+        }
+      },
+      "SixLabors.ImageSharp/1.0.2": {
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore/5.6.3": {
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3",
+          "Swashbuckle.AspNetCore.SwaggerGen": "5.6.3",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.6.3"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/5.6.3": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.2.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "5.6.3.0",
+            "fileVersion": "5.6.3.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/5.6.3": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "5.6.3.0",
+            "fileVersion": "5.6.3.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.6.3": {
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "5.6.3.0",
+            "fileVersion": "5.6.3.0"
+          }
         }
       },
       "System.Memory/4.5.0": {},
@@ -2306,6 +2481,13 @@
       "path": "amazon.lambda.logging.aspnetcore/3.0.0",
       "hashPath": "amazon.lambda.logging.aspnetcore.3.0.0.nupkg.sha512"
     },
+    "Amazon.Lambda.S3Events/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Q092CYTFPeI0mYAo9NKsBKEtof2Q5dweGtBVQsH8u/gjMYph1kPJYNEMCkFOLZQDqQe1fRNfoITkzUiioByCQ==",
+      "path": "amazon.lambda.s3events/1.2.0",
+      "hashPath": "amazon.lambda.s3events.1.2.0.nupkg.sha512"
+    },
     "Amazon.Lambda.Serialization.SystemTextJson/2.0.1": {
       "type": "package",
       "serviceable": true,
@@ -2313,26 +2495,40 @@
       "path": "amazon.lambda.serialization.systemtextjson/2.0.1",
       "hashPath": "amazon.lambda.serialization.systemtextjson.2.0.1.nupkg.sha512"
     },
-    "AWSSDK.Core/3.3.106.16": {
+    "AWSSDK.Core/3.5.1.37": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-S+s4h94V44h3xgAavUzX7+nKcaRo9pjKQSFyaodkwEamjfY04OeLyVFnYEmP4zwvtJSMRZLXRK0zAq87J7H/Ww==",
-      "path": "awssdk.core/3.3.106.16",
-      "hashPath": "awssdk.core.3.3.106.16.nupkg.sha512"
+      "sha512": "sha512-nzF3MaZNOc4y1+RMWlzWd4N7FxwEqyccyl+rr6svIfz4ljsFMd20r1ecguYN7Jd4x5L2QoTj/QSF6UD5CH8Cmw==",
+      "path": "awssdk.core/3.5.1.37",
+      "hashPath": "awssdk.core.3.5.1.37.nupkg.sha512"
     },
-    "AWSSDK.Extensions.NETCore.Setup/3.3.100.1": {
+    "AWSSDK.DynamoDBv2/3.5.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-KrMhRur0x5X8sSkRSVKt7iEwdsMqu8sa5zqTOhaxEw52r/YaqiiRgw0hNcNCObpm2gQAASewlIVfaBitGjHlUw==",
-      "path": "awssdk.extensions.netcore.setup/3.3.100.1",
-      "hashPath": "awssdk.extensions.netcore.setup.3.3.100.1.nupkg.sha512"
+      "sha512": "sha512-SlR+zq1YIp3m/rfDc9kL+iLJ2zi/99uESZYNvgmKEAFlXBFnmYNxm310Hg5Xa8OXXZUx04j78FXgekZTT3meCg==",
+      "path": "awssdk.dynamodbv2/3.5.3.1",
+      "hashPath": "awssdk.dynamodbv2.3.5.3.1.nupkg.sha512"
     },
-    "AWSSDK.S3/3.3.110.62": {
+    "AWSSDK.Extensions.NETCore.Setup/3.3.101": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DLNUGQ4MUkCL4sRvNfQDnPN8zWsdfsvQMw2a2s8OHIdRl0e2uBUmC3vP+wabujgrgboTSdSu2uY+mOLqzKznVw==",
-      "path": "awssdk.s3/3.3.110.62",
-      "hashPath": "awssdk.s3.3.3.110.62.nupkg.sha512"
+      "sha512": "sha512-mbFGOX62zG4A/0bIhKy+I3NmNBAwSCKClFl+Y6RzuRj+0cQDBbmH33JMe8x3SWizhoyl+ATm2ldOR1phIFTGvA==",
+      "path": "awssdk.extensions.netcore.setup/3.3.101",
+      "hashPath": "awssdk.extensions.netcore.setup.3.3.101.nupkg.sha512"
+    },
+    "AWSSDK.S3/3.5.4.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O5bP14mGGLHA3D4Hgnm7qOy5x8VC8lfnjFKobiE/kq2VPm7Ib2TDg1JvIhnlrilZml9dX6bGiYzoFSg9VzBXSA==",
+      "path": "awssdk.s3/3.5.4.1",
+      "hashPath": "awssdk.s3.3.5.4.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
+      "path": "microsoft.extensions.apidescription.server/3.0.0",
+      "hashPath": "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/2.1.0": {
       "type": "package",
@@ -2389,6 +2585,62 @@
       "sha512": "sha512-gMwH6wgWOPfyfLfMLEP+ZF7/MSJq35e0xxKEYUjt8veEznY45nBVqdfI876+9SFQq2ChcqKf2UyYc2XYj2v27w==",
       "path": "microsoft.extensions.primitives/2.1.0",
       "hashPath": "microsoft.extensions.primitives.2.1.0.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+      "path": "microsoft.openapi/1.2.3",
+      "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ey7xQgWwixxdrmhzEUvaR4kxZDSQMWQScp8ViLvmL5xCBKG6U3TaMv/jzHilpfQXpHmJ4IylKGzzMvnYX2FwHQ==",
+      "path": "runtime.osx.10.10-x64.corecompat.system.drawing/5.8.64",
+      "hashPath": "runtime.osx.10.10-x64.corecompat.system.drawing.5.8.64.nupkg.sha512"
+    },
+    "SixLabors.ImageSharp/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iZJ37Iss3pUkFl961x1aka85QuvgY9oNZabHijzVnHs4QTz6EMNx3zjJDyvK/0+Ryj6JPv/PC7GVIJXLHtu2nQ==",
+      "path": "sixlabors.imagesharp/1.0.2",
+      "hashPath": "sixlabors.imagesharp.1.0.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/5.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UkL9GU0mfaA+7RwYjEaBFvAzL8qNQhNqAeV5uaWUu/Z+fVgvK9FHkGCpTXBqSQeIHuZaIElzxnLDdIqGzuCnVg==",
+      "path": "swashbuckle.aspnetcore/5.6.3",
+      "hashPath": "swashbuckle.aspnetcore.5.6.3.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/5.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rn/MmLscjg6WSnTZabojx5DQYle2GjPanSPbCU3Kw8Hy72KyQR3uy8R1Aew5vpNALjfUFm2M/vwUtqdOlzw+GA==",
+      "path": "swashbuckle.aspnetcore.swagger/5.6.3",
+      "hashPath": "swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/5.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CkhVeod/iLd3ikVTDOwG5sym8BE5xbqGJ15iF3cC7ZPg2kEwDQL4a88xjkzsvC9oOB2ax6B0rK0EgRK+eOBX+w==",
+      "path": "swashbuckle.aspnetcore.swaggergen/5.6.3",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/5.6.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BPvcPxQRMsYZ3HnYmGKRWDwX4Wo29WHh14Q6B10BB8Yfbbcza+agOC2UrBFA1EuaZuOsFLbp6E2+mqVNF/Je8A==",
+      "path": "swashbuckle.aspnetcore.swaggerui/5.6.3",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
     },
     "System.Memory/4.5.0": {
       "type": "package",

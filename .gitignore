@@ -1,0 +1,8 @@
+
+*.dll
+
+*.dylib
+
+*.pdb
+
+Instagrao/.vs/Instagrao/v16/.suo
