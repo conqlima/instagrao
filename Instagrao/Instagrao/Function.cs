@@ -45,7 +45,7 @@ namespace Instagrao
 
             IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.Development.json")
+            .AddJsonFile("appsettings.json")
             .Build();
 
             ConfigureServices(serviceColletion, configuration);
@@ -246,6 +246,8 @@ namespace Instagrao
                 services.AddAWSService<IAmazonDynamoDB>();
             }
 
+            services.AddDefaultAWSOptions(configuration.GetAWSOptions());
+            services.AddAWSService<IAmazonS3>();
             services.AddSingleton(configuration.GetSection("DynamoDb").Get<AppSettings>());
             services.AddServices();
             services.AddRepositories();

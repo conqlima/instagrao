@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WHjP9X8QeVW/PjXJawbE0QkSi74h28EDCcwpL7xgiD1FLOYLXSlm+ssw4LkW+9/vHgCnROruvMeozZzrFizBrw==",
+  "dgSpecHash": "cbeeJzsTAG/skyKkhmqEH61l5JwuujDsgdkkG8Eog8ykQOxUdn5WOfPlglF6CGouzJ9EPXSemWS41yr5roeBUw==",
   "success": true,
   "projectFilePath": "C:\\Users\\robson.araujo\\Desktop\\instagrao\\Instagrao\\Instagrao\\Instagrao.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\robson.araujo\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.0.1\\amazon.lambda.serialization.systemtextjson.2.0.1.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.core\\3.5.1.37\\awssdk.core.3.5.1.37.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.dynamodbv2\\3.5.3.1\\awssdk.dynamodbv2.3.5.3.1.nupkg.sha512",
-    "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.3.100.1\\awssdk.extensions.netcore.setup.3.3.100.1.nupkg.sha512",
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.extensions.netcore.setup\\3.3.101\\awssdk.extensions.netcore.setup.3.3.101.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\awssdk.s3\\3.5.4.1\\awssdk.s3.3.5.4.1.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.extensions.configuration\\2.1.0\\microsoft.extensions.configuration.2.1.0.nupkg.sha512",
@@ -33,18 +33,8 @@
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "C:\\Users\\robson.araujo\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Users\\robson.araujo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "C:\\Users\\robson.araujo\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.8\\microsoft.netcore.app.host.linux-x64.3.1.8.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: AWSSDK.Extensions.NETCore.Setup 3.3.100.1 requires AWSSDK.Core (>= 3.3.100 && < 3.4.0) but version AWSSDK.Core 3.5.1.37 was resolved.",
-      "libraryId": "AWSSDK.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

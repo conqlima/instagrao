@@ -12,7 +12,7 @@
     "framework"     : "netcoreapp3.1",
     "s3-prefix"     : "Instagrao/",
     "template"      : "serverless.template",
-    "template-parameters" : "\"ShouldCreateBucket\"=\"false\";\"BucketName\"=\"\"",
-    "s3-bucket"           : "conqlimabucket",
-    "stack-name"          : "Instagrao"
+    "template-parameters" : "\"BucketName\"=\"\"",
+    "s3-bucket"           : "conqlimabucket2",
+    "stack-name"          : "InstagraoApi"
 }

@@ -108,10 +108,10 @@
           "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {}
         }
       },
-      "AWSSDK.Extensions.NETCore.Setup/3.3.100.1": {
+      "AWSSDK.Extensions.NETCore.Setup/3.3.101": {
         "type": "package",
         "dependencies": {
-          "AWSSDK.Core": "[3.3.100, 3.4.0)",
+          "AWSSDK.Core": "[3.3.100, 3.6.0)",
           "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "2.0.0"
@@ -403,6 +403,355 @@
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       }
+    },
+    ".NETCoreApp,Version=v3.1/linux-x64": {
+      "Amazon.Lambda.APIGatewayEvents/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.APIGatewayEvents.dll": {}
+        }
+      },
+      "Amazon.Lambda.ApplicationLoadBalancerEvents/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {}
+        }
+      },
+      "Amazon.Lambda.AspNetCoreServer/5.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "2.1.0",
+          "Amazon.Lambda.ApplicationLoadBalancerEvents": "2.0.0",
+          "Amazon.Lambda.Core": "1.1.0",
+          "Amazon.Lambda.Logging.AspNetCore": "3.0.0",
+          "Amazon.Lambda.Serialization.SystemTextJson": "2.0.1"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.AspNetCoreServer.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.AspNetCoreServer.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Amazon.Lambda.Core/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
+        }
+      },
+      "Amazon.Lambda.Logging.AspNetCore/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "1.1.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Logging": "2.1.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.Logging.AspNetCore.dll": {}
+        }
+      },
+      "Amazon.Lambda.S3Events/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.S3": "3.5.3.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/Amazon.Lambda.S3Events.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.S3Events.dll": {}
+        }
+      },
+      "Amazon.Lambda.Serialization.SystemTextJson/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "1.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.5.1.37": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
+        }
+      },
+      "AWSSDK.DynamoDBv2/3.5.3.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.5.1.36, 3.6.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {}
+        }
+      },
+      "AWSSDK.Extensions.NETCore.Setup/3.3.101": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.3.100, 3.6.0)",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Extensions.NETCore.Setup.dll": {}
+        }
+      },
+      "AWSSDK.S3/3.5.4.1": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.5.1.36, 3.6.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.S3.dll": {}
+        }
+      },
+      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
+          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
+          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "2.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Logging.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Options": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Options/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.1.0",
+          "Microsoft.Extensions.Primitives": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
+      "Microsoft.OpenApi/1.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "runtime.osx.10.10-x64.CoreCompat.System.Drawing/5.8.64": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/runtime.osx.10.10-x64.CoreCompat.System.Drawing.dll": {}
+        }
+      },
+      "SixLabors.ImageSharp/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore/5.6.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3",
+          "Swashbuckle.AspNetCore.SwaggerGen": "5.6.3",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.6.3"
+        },
+        "build": {
+          "build/Swashbuckle.AspNetCore.props": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/5.6.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.2.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/5.6.3": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "5.6.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.6.3": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "System.Memory/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -565,14 +914,14 @@
         "tools/uninstall.ps1"
       ]
     },
-    "AWSSDK.Extensions.NETCore.Setup/3.3.100.1": {
-      "sha512": "KrMhRur0x5X8sSkRSVKt7iEwdsMqu8sa5zqTOhaxEw52r/YaqiiRgw0hNcNCObpm2gQAASewlIVfaBitGjHlUw==",
+    "AWSSDK.Extensions.NETCore.Setup/3.3.101": {
+      "sha512": "mbFGOX62zG4A/0bIhKy+I3NmNBAwSCKClFl+Y6RzuRj+0cQDBbmH33JMe8x3SWizhoyl+ATm2ldOR1phIFTGvA==",
       "type": "package",
-      "path": "awssdk.extensions.netcore.setup/3.3.100.1",
+      "path": "awssdk.extensions.netcore.setup/3.3.101",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.extensions.netcore.setup.3.3.100.1.nupkg.sha512",
+        "awssdk.extensions.netcore.setup.3.3.101.nupkg.sha512",
         "awssdk.extensions.netcore.setup.nuspec",
         "lib/netstandard1.3/AWSSDK.Extensions.NETCore.Setup.dll",
         "lib/netstandard1.3/AWSSDK.Extensions.NETCore.Setup.pdb",
@@ -972,7 +1321,7 @@
     ".NETCoreApp,Version=v3.1": [
       "AWSSDK.Core >= 3.5.1.37",
       "AWSSDK.DynamoDBv2 >= 3.5.3.1",
-      "AWSSDK.Extensions.NETCore.Setup >= 3.3.100.1",
+      "AWSSDK.Extensions.NETCore.Setup >= 3.3.101",
       "AWSSDK.S3 >= 3.5.4.1",
       "Amazon.Lambda.AspNetCoreServer >= 5.1.1",
       "Amazon.Lambda.S3Events >= 1.2.0",
@@ -1035,7 +1384,7 @@
           },
           "AWSSDK.Extensions.NETCore.Setup": {
             "target": "Package",
-            "version": "[3.3.100.1, )"
+            "version": "[3.3.101, )"
           },
           "AWSSDK.S3": {
             "target": "Package",
@@ -1080,6 +1429,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[3.1.8, 3.1.8]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1090,18 +1445,11 @@
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
+      }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: AWSSDK.Extensions.NETCore.Setup 3.3.100.1 requires AWSSDK.Core (>= 3.3.100 && < 3.4.0) but version AWSSDK.Core 3.5.1.37 was resolved.",
-      "libraryId": "AWSSDK.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }
