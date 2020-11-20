@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
@@ -79,7 +80,8 @@ namespace Instagrao
                 {
                     try
                     {
-                        using GetObjectResponse objectResponse = await _S3Client.GetObjectAsync(record.S3.Bucket.Name, record.S3.Object.Key);
+                        context.Logger.LogLine(HttpUtility.UrlDecode(record.S3.Object.Key));
+                        using GetObjectResponse objectResponse = await _S3Client.GetObjectAsync(record.S3.Bucket.Name, HttpUtility.UrlDecode(record.S3.Object.Key));
 
                         using Stream responseStream = objectResponse.ResponseStream;
                         using Image image = Image.Load(responseStream);
@@ -91,7 +93,7 @@ namespace Instagrao
                         {
                             Item = new Dictionary<string, AttributeValue>
                             {
-                                { "ImageMetadataId", new AttributeValue { S = record.S3.Object.Key }},
+                                { "ImageMetadataId", new AttributeValue { S = HttpUtility.UrlDecode(record.S3.Object.Key) }},
                                 { "Length", new AttributeValue { N = length.ToString() }},
                                 { "Width", new AttributeValue { N = width.ToString() }},
                                 { "Height", new AttributeValue { N = height.ToString() }}
@@ -212,14 +214,6 @@ namespace Instagrao
             using MemoryStream ms = new MemoryStream();
             responseStream.CopyTo(ms);
             return ms.ToArray();
-            //byte[] buffer = new byte[16 * 1024];
-            //using MemoryStream ms = new MemoryStream();
-            //int read;
-            //while ((read = responseStream.Read(buffer, 0, buffer.Length)) > 0)
-            //{
-            //    ms.Write(buffer, 0, read);
-            //}
-            //return ms.ToArray();
         }
 
         private string GetRequestParams(APIGatewayProxyRequest request)
@@ -229,7 +223,7 @@ namespace Instagrao
                 s3ObjectKey = request.PathParameters[ID_QUERY_STRING_NAME];
             else if (request.QueryStringParameters != null && request.QueryStringParameters.ContainsKey(ID_QUERY_STRING_NAME))
                 s3ObjectKey = request.QueryStringParameters[ID_QUERY_STRING_NAME];
-            return s3ObjectKey;
+            return HttpUtility.UrlDecode(s3ObjectKey);
         }
         private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
